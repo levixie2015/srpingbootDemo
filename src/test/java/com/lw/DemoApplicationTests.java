@@ -21,7 +21,7 @@ public class DemoApplicationTests {
     DataSourceProperties dataSourceProperties;
     @Autowired
     ApplicationContext applicationContext;
-    @Resource(name = "myqlDataSource")
+    @Resource(name = "test1DataSource")
     private DataSource mysqlDataSource;
 
     @Test
