@@ -43,9 +43,9 @@ public class DataSourceConfig {
             throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(datasource);
-        bean.setMapperLocations(
-                // 设置mybatis的xml所在位置
-                new PathMatchingResourcePatternResolver().getResources("classpath*:**/mapper/test1/*.xml"));
+        // 设置mapper的xml所在位置.由于是自定义的数据源.
+        // mapper的路径必须为"classpath*:**/mapper/test1/*.xml",不能是"classpath*:**/mapper/*.xml"
+        bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath*:**/mapper/test1/*.xml"));
         return bean.getObject();
     }
 
